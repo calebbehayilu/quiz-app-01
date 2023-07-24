@@ -50,11 +50,11 @@ const Question = ({ questions }) => {
       ) : null}
       <div className="p-5">
         <div className="mb-2 min-w-40">
-          <h1 className=" px-4 text-lg text-accent ">
+          <h1 className=" px-4 text-lg text-accent max-w-md">
             {questions[currentQuestion].question}
           </h1>
 
-          <ul className="grid  md:grid-cols-2 grid-cols-1 text-sm max-w-lg">
+          <ul className="grid md:grid-cols-2 grid-cols-1 text-sm max-w-lg">
             {questions[currentQuestion].choices?.map((choice, i) => (
               <li
                 key={choice}

@@ -1,4 +1,5 @@
-export default [{
+const movies = [
+  {
     id: 1,
     question: "What is the best movie of 2023 so far?",
     choices: [
@@ -98,4 +99,6 @@ export default [{
     choices: ["Triangle of Sadness", "EO", "Close", "The Quiet Girl"],
     answer: 1,
   },
-]  
+];
+
+module.exports = movies;

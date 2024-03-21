@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Question from "../question";
+import Question from "../../components/questions";
 
 export const getStaticProps = async () => {
   const url = "http://localhost:8000/random/";

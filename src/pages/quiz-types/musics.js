@@ -1,5 +1,5 @@
 import { useEffect, useState, Component } from "react";
-import Question from "../question";
+import Question from "../../components/questions";
 import axios from "axios";
 
 export const getStaticProps = async () => {
@@ -13,10 +13,8 @@ export const getStaticProps = async () => {
   };
 };
 
-const Musics = ({ questions  }) => {
-
+const Musics = ({ questions }) => {
   const [jsonData, setJsonData] = useState(questions);
-
 
   return (
     <div
@@ -24,7 +22,7 @@ const Musics = ({ questions  }) => {
                     justify-between p-10"
     >
       <h1 className="text-textColor text-2xl py-4">Music</h1>
-     <Question questions={jsonData} />
+      <Question questions={jsonData} />
     </div>
   );
 };

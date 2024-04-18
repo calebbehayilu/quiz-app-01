@@ -1,4 +1,4 @@
-import GenerQuestion from "../../components/generQuestion";
+import GenerQuestion from "../components/generQuestion";
 
 export default function Home() {
   return (

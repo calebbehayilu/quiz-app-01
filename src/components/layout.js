@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 
 const Layout = ({ children }) => {
   return (
-    <div className={` ${montserrat.className} overflow-hidden bg-background`}>
+    <div className={` ${montserrat.className} overflow-hidden`}>
       <Navbar />
       {children}
     </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Result from "./result";
+import BtnAnswer from "./btn-answer";
 
 const Question = ({ questions }) => {
   const [answers, setAnswers] = useState(Array(10).fill(null));
@@ -9,6 +10,7 @@ const Question = ({ questions }) => {
 
   const onShowModal = () => {
     setShowModal(false);
+    setCurrentQuestion(0);
   };
 
   const answerCount = () => {
@@ -33,28 +35,34 @@ const Question = ({ questions }) => {
         setAnswers(nextAnswers);
       }
     }
+
+    if (currentQuestion === 9) return setShowModal(true);
+
+    onNextQuestion();
   };
+
   const onNextQuestion = () => {
     let nextQuestion = currentQuestion + 1;
-
     setCurrentQuestion(nextQuestion);
   };
+
   useEffect(() => {
     answers.every((element) => element != null) ? answerCount() : null;
   }, [result, answers]);
 
   return (
-    <div className=" border-gray-300 border-2 rounded-xl font-montserrat ">
+    <div className="">
       {answers.every((element) => element != null) && showModal ? (
         <Result result={result} onShowModal={onShowModal} />
       ) : null}
+
       <div className="p-5">
         <div className="mb-2 min-w-40">
-          <h1 className=" px-4 text-lg text-accent max-w-md">
+          <h1 className="p-4 text-lg max-w-md">
             {questions[currentQuestion].question}
           </h1>
 
-          <ul className="grid md:grid-cols-2 grid-cols-1 text-sm max-w-lg">
+          <ul className="flex flex-col gap-3">
             {questions[currentQuestion].choices?.map((choice, i) => (
               <li
                 key={choice}
@@ -65,23 +73,12 @@ const Question = ({ questions }) => {
                     questions[currentQuestion].answer
                   )
                 }
-                className="border-2 m-2 p-1 px-4 rounded-2xl h-min-10
-                     hover:text-yellow-400 text-textColor"
+                className="btn btn-outline btn-accent"
               >
                 {choice}
               </li>
             ))}
           </ul>
-          {currentQuestion === 9 ? null : (
-            <button
-              className="bg-accent text-white font-bold uppercase text-sm px-6 py-3 rounded shadow m-4 float-right disabled:opacity-50"
-              type="button"
-              onClick={() => onNextQuestion()}
-              disabled={answers[currentQuestion] === null ? true : false}
-            >
-              Next
-            </button>
-          )}
         </div>
       </div>
     </div>

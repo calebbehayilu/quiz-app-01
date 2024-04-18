@@ -1,4 +1,4 @@
-import { BiCameraMovie, BiMusic, BiDice3 } from "react-icons/bi";
+// import { BiCameraMovie, BiMusic, BiDice3 } from "react-icons/bi";
 import BtnHome from "./btn-home";
 
 const GenerQuestion = () => {
@@ -10,21 +10,21 @@ const GenerQuestion = () => {
           <BtnHome
             name="Movies"
             link="/quiz?type=movie"
-            icon={<BiCameraMovie size={20} />}
+            // icon={<BiCameraMovie size={20} />}
           />
         </li>
         <li className="btn btn-primary btn-home">
           <BtnHome
             name="Music"
             link="/quiz?type=music"
-            icon={<BiMusic size={20} />}
+            // icon={<BiMusic size={20} />}
           />
         </li>
         <li className="btn btn-primary btn-home">
           <BtnHome
             name="Random"
             link="/quiz?type=random"
-            icon={<BiDice3 size={20} />}
+            // icon={<BiDice3 size={20} />}
           />
         </li>
       </ul>

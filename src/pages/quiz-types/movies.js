@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Question from "../../components/questions";
-import { movies } from "./../data";
+import { movies } from "../api/questions/data";
 
 const Movies = () => {
   const [jsonData, setJsonData] = useState({});
